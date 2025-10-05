@@ -18,7 +18,7 @@ var (
 func TestInit(t *testing.T) {
 	api1Url = os.Getenv("API_1_URL")
 	api1HealthPath = os.Getenv("API_1_HEALTH_PATH")
-	endpoint := api1Url + api1HealthPath
+	endpoint := api1Url + api1HealthPath + "a"
 	if err := utils.APIStatusOk(endpoint); err != nil {
 		t.Fatalf("API 1 health check failed: %v", err)
 	}
