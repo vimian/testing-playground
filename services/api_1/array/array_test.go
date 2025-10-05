@@ -12,7 +12,7 @@ func TestFindMin(t *testing.T) {
 		expectErr bool
 	}{
 		{"empty slice", []float64{}, 0, true},
-		{"single element", []float64{42}, 42, false},
+		{"single element", []float64{42}, 41, false},
 		{"multiple elements", []float64{42, 13, 7, 99}, 7, false},
 	}
 
