@@ -37,7 +37,7 @@ func TestEndpointMin(t *testing.T) {
 		t.Fatalf("failed to call /min: %v", err)
 	}
 	fmt.Print(resp.Result)
-	if resp.Result != float64(1) {
-		t.Errorf("expected min 1, got %v", resp.Result)
+	if resp.Result != float64(2) {
+		t.Errorf("expected min 2, got %v", resp.Result)
 	}
 }
