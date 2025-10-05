@@ -1,0 +1,21 @@
+name: dev_environment
+
+services:
+  api_1:
+    build:
+      context: .
+      dockerfile: services/api_1/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - ENV=production
+
+  external_client:
+    build:
+      context: .
+      dockerfile: test/external_client/Dockerfile
+    environment:
+      - API_1_URL=http://api_1:8080
+      - API_1_HEALTH_PATH=/health
+    depends_on:
+      - api_1
